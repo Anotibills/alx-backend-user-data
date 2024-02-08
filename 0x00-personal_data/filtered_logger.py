@@ -60,7 +60,6 @@ class RedactingFormatter(logging.Formatter):
     '''
     This redacting Formatter class
     '''
-
     REDACTION = "***"
     FORMAT = "[HOLBERTON] %(name)s %(levelname)s %(asctime)-15s: %(message)s"
     SEPARATOR = ";"
