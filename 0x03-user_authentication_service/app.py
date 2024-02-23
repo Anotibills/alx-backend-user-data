@@ -104,5 +104,21 @@ def update_password() -> str:
         abort(403)
 
 
+@app.errorhandler(401)
+def unauthorized(error) -> str:
+    '''
+    This return "unauthorized" for error handling
+    '''
+    return jsonify({"message": "Unauthorized"}), 401
+
+
+@app.errorhandler(403)
+def forbidden(error) -> str:
+    '''
+    An error handling that returns "Forbidden"
+    '''
+    return jsonify({"message": "Forbidden"}), 403
+
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port="5000")
